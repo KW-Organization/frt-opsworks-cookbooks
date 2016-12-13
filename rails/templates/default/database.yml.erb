@@ -14,7 +14,7 @@
   port: <%= @database[:port].to_i.inspect %>
 <% end -%>
 <% if @database[:strict] -%>
-  strict: <%= @database[:strict].to_i.inspect %>
+  strict: <%= @database[:strict].to_s.inspect %>
 <% end -%>
 
 <% end %>
