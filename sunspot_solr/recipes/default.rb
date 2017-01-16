@@ -32,7 +32,6 @@ node[:deploy].each do |application, deploy|
       :user => deploy[:user],
       :group => deploy[:group],
       :timeout => 30,
-      :data_dir => data_dir
     )
   end
 end
