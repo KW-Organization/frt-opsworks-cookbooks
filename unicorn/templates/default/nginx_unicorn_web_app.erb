@@ -189,3 +189,10 @@ server {
   return 301 $scheme://<%= domain %>$request_uri;
 }
 <% end %>
+
+server {
+  <% domain = @application[:domains].first %>
+  if ($http_x_forwarded_proto = 'http') {
+    return 301 https://<%= domain %>.kidzworld.com$request_uri;
+  }
+}
