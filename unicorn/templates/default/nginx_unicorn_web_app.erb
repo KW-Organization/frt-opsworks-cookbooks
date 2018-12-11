@@ -4,6 +4,12 @@ upstream unicorn_<%= @application[:domains].first %> {
 
 server {
   listen 80;
+  server_name mg.kidzworld.com mobile-games.kidzworld.com;
+  return 301 https://www.kidzworld.com/games;
+}
+
+server {
+  listen 80;
   server_name <%= @application[:domains].join(" ") %> <%= node[:hostname] %>;
   access_log <%= node[:nginx][:log_dir] %>/<%= @application[:domains].first %>.access.log;
 
